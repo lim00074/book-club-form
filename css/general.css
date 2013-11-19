@@ -1,0 +1,59 @@
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+label {
+	display: block; /* this places the label on top of the input field */
+	cursor: pointer; /* this makes the cursor the pointing hand to show that it can be clicked */
+}
+
+input,
+fieldset,
+textarea,
+select {
+	font-size: 1rem;
+	margin-bottom: 20px;
+}
+
+.input-text {
+	padding: 0.5em;
+	width: 100%;
+
+	background-image: linear-gradient(to bottom, #efefef, #fff);
+	border: 1px solid #ccc;
+
+	font-size: 1rem;
+}
+
+input + label { /* must be input + label, not label + input, or else it won't affect the checkbox and label */
+	display: inline;
+}
+
+button {
+	padding: 1em;
+	font-size: 1.125rem;
+	border: 2px solid #00f;
+	background-image: linear-gradient(to bottom, #66e, #00f);
+	color: #fff;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-image: linear-gradient(to bottom, #00f, #66e);
+}
+
+button:active {
+	background-image: linear-gradient(to bottom, #00d, #66c);
+}
+
+.error {
+	display: block;
+	color: #f33;
+}
+
+.input-error {
+	border: 3px solid #f33;
+}

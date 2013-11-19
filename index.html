@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+	<meta charset="utf-8">
+	<title>Forms</title>
+	<link href="css/general.css" rel="stylesheet">
+</head>
+<body>
+
+<form>
+
+	<div>
+	<!--
+		All inputs must have labels.
+		The label is associated with the input using the "for" attribute.
+		The for attribute must match the ID of the input tag.
+		Now, when this is read, it will read "Input Name".
+		Also the label is linked to the input, in that if you click the label, the input box is also selected.
+
+		Styles:
+		Label above box (most accessible and good for memory; covers a lot of space, so easy to click)
+		Label beside box (issues on mobile screens, since it takes up a lot of horizontal space)
+		Label inside box (least accessible; not good for people with cognitive disabilities, since the text disappears)
+	-->
+	<label for="name">
+		Name:
+		<strong class="error">Please enter your name</strong>
+	</label>
+		<input type="text" id="name" class="input-text input-error" required>
+	</div>
+
+	<div>
+		<label for="email">Email Address:</label>
+		<input type="email" id="email" class="input-text" value="you@example.com">
+		<!--Value is actually filled in-->
+	</div>
+
+	<div>
+		<label for="website">Website:</label>
+		<input type="url" id="website" class="input-text" placeholder="http://domain.com">
+		<!--
+		Placeholder is used to provide an example.
+		It is not a replacement for the label because it isn't accessible
+		-->
+	</div>
+
+	<div>
+		<label for="favcolor">Favourite Colour:</label>
+		<input type="color" id="favcolor">
+	</div>
+
+	<div>
+		<label for="birthday">Birthday:</label>
+		<input type="date" id="birthday">
+		<!--
+			Can also have:
+			type="time"
+			type="datetime-local"
+		-->
+	</div>
+
+	<div>
+		<label for="age">Age:</label>
+		<input type="number" id="age" pattern="[0-9]*" min="1" max="130">
+		<!--
+			for mobile, [0-9]* will allow you to input 0-9, 0 or more times
+			min and max values limit the results.
+			-->
+	</div>
+
+	<div>
+		<label for="phone">Phone:</label>
+		<input type="tel" id="phone" maxlength="17">
+	</div>
+
+	<div>
+		<input type="checkbox" id="code" checked> <!--this will check it off by default-->
+		<label for="code">I love code</label> <!--this time you want the checkbox beside the code-->
+	</div>
+
+	<fieldset>
+		<!--
+			Fieldset allows you to group stuff together
+			Legend is the name of the group
+			Name attribute tells the browser what to group together. If you don't have this, then you will be able to check all the radio buttons
+		-->
+		<legend>How satisfied are you with something?</legend>
+
+		<input type="radio" id="extreme" name="satisfaction">
+		<label for="extreme">Extremely Dissatisfied</label>
+
+		<input type="radio" id="dissatisfied" name="satisfaction">
+		<label for="dissatisfied">Dissatisfied</label>
+
+		<input type="radio" id="neutral" name="satisfaction">
+		<label for="neutral">Neutral</label>
+
+		<input type="radio" id="satisfied" name="satisfaction">
+		<label for="satisfied">Satisfied</label>
+
+		<input type="radio" id="extremegood" name="satisfaction">
+		<label for="extremegood">Extremely Satisfied</label>
+	</fieldset>
+
+	<div>
+		<label for="bio">Describe yourself</label>
+		<textarea id="bio" class="input-text"></textarea> <!--while a text input allows you to input about 200 characters, text area is for larger bodies of text-->
+	</div>
+
+	<div>
+		<label for="dino">Favourite Dinosaur</label>
+		<select id="dino">
+			<option></option>
+			<option>Pteranadon</option>
+			<option>Triceratops</option>
+			<option>Stegasaurus</option>
+			<option>Dimetrodon</option>
+			<option>Tyranosaurus Rex</option> <!--if you want one of the options to be shown first, add the "selected" tag (<option selected>)-->
+		</select>
+	</div>
+
+	<button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
