@@ -4,9 +4,90 @@
 	box-sizing: border-box;
 }
 
+/*BACKGROUND AREAS*/
+
+html {
+	font-size: 100%;
+	font-family: "Arial", sans-serif;
+	height: 100%;
+	color: #aaa;
+
+	background-color: #333;
+	background-color: #6d695c;
+	background-image:
+	repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+	repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+	linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+	linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+	background-size: 70px 120px;
+}
+
+body {
+
+margin:0;
+padding: 0;
+
+	/* IE10 Consumer Preview */
+	background-image: -ms-radial-gradient(center bottom, circle farthest-side, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+
+	/* Mozilla Firefox */
+	background-image: -moz-radial-gradient(center bottom, circle farthest-side, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+
+	/* Opera */
+	background-image: -o-radial-gradient(center bottom, circle farthest-side, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+
+	/* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 477, color-stop(0, rgba(0, 0, 0, 0.1)), color-stop(1, rgba(0, 0, 0, 0.8)));
+
+	/* Webkit (Chrome 11+) */
+	background-image: -webkit-radial-gradient(center bottom, circle farthest-side, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+
+	/* W3C Markup, IE10 Release Preview */
+	background-image: radial-gradient(circle farthest-side at center bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.main {
+	padding: 2rem;
+}
+
+@media only screen and (min-width: 100em){
+	html{
+		font-size: 150%;
+	}
+}
+
+
+/*H STYLING*/
+h1 {
+	font-size: 1.5rem;
+	padding-bottom: 1rem;
+	margin-bottom: 2.5rem;
+	border-bottom: 3px dotted #fff;
+	color: #fff;
+}
+
+option {
+	font-size: 2rem;
+}
+
+@media only screen and (min-width: 30em) {
+	h1 {
+		font-size: 1.75rem;
+	}
+}
+
+/*FORM ELEMENTS*/
+
 label {
 	display: block; /* this places the label on top of the input field */
 	cursor: pointer; /* this makes the cursor the pointing hand to show that it can be clicked */
+	padding-bottom: 5px;
+	font-size: 1.125rem;
+}
+
+legend,
+p {
+	font-size: 1.125rem;
 }
 
 input,
@@ -17,11 +98,18 @@ select {
 	margin-bottom: 20px;
 }
 
+.full-width {
+	width: 100%;
+}
+
+.set-width {
+	width: 100%;
+}
+
 .input-text {
 	padding: 0.5em;
-	width: 100%;
 
-	background-image: linear-gradient(to bottom, #efefef, #fff);
+	background-image: linear-gradient(to bottom, #ddd, #fff);
 	border: 1px solid #ccc;
 
 	font-size: 1rem;
@@ -31,23 +119,140 @@ input + label { /* must be input + label, not label + input, or else it won't af
 	display: inline;
 }
 
+.float-left,
+.float-left2 {
+	float: none;
+	width: 100%;
+}
+
+.float-right,
+.float-right2 {
+	margin-top: 0;
+	float: none;
+	width: 100%;
+}
+
+textarea {
+	height: 15rem;
+}
+
+.textarea {
+	width: 100%;
+}
+
+fieldset {
+	width: 310px;
+}
+
+ol {
+	list-style: none;
+	color: #fff;
+}
+
+fieldset label,
+.body {
+	font-size: 1rem;
+}
+
+.body {
+	color: #fff;
+}
+
+@media only screen and (min-width: 25em) {
+	.set-width {
+		width: auto;
+	}
+}
+
+@media only screen and (min-width: 34em) {
+	.float-left,
+	.float-left2 {
+		float: left;
+		width: 45%;
+	}
+
+	.float-right {
+		margin-top: 5rem;
+	}
+
+	.float-right,
+	.float-right2{
+		float: right;
+		width: 45%;
+	}
+
+}
+
+@media only screen and (min-width: 60em){
+	.float-left2 {
+		float: none;
+		position: absolute;
+		width: 300px;
+		display: inline-block;
+	}
+
+	.float-right2 {
+		float: none;
+		position: absolute;
+		width: 500px;
+		margin-left: 400px;
+		display: inline-block;
+	}
+
+	.spacer{
+		margin-top: 84px;
+	}
+
+	.float-left {
+		float: right;
+		margin-top: -20px;
+	}
+
+	.float-right {
+		float: none;
+		width: 50%;
+	}
+
+	.textarea {
+		float: left;
+		width: 50%;
+	}
+
+}
+
+@media only screen and (min-width: 100em){
+	.float-right2 {
+		margin-left: 600px;
+	}
+
+	.spacer{
+		margin-top: 120px;
+	}
+}
+
+/*BUTTON*/
+
 button {
 	padding: 1em;
+	margin-bottom: 1rem;
 	font-size: 1.125rem;
-	border: 2px solid #00f;
-	background-image: linear-gradient(to bottom, #66e, #00f);
+	border: 2px solid #C40202;
+	display: inline-block;
+	background-image: linear-gradient(to bottom, #E33535, #960000);
 	color: #fff;
 	border-radius: 8px;
 	cursor: pointer;
 }
 
 button:hover {
-	background-image: linear-gradient(to bottom, #00f, #66e);
+	background-image: linear-gradient(to bottom, #960000, #E33535);
 }
 
 button:active {
-	background-image: linear-gradient(to bottom, #00d, #66c);
+	background-image: linear-gradient(to bottom, #760000, #C33535);
 }
+
+/*ERROR*/
 
 .error {
 	display: block;
@@ -56,4 +261,19 @@ button:active {
 
 .input-error {
 	border: 3px solid #f33;
+}
+
+/*CLEARFIX*/
+
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+    zoom:1;
 }
