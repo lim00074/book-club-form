@@ -52,8 +52,7 @@ padding: 0;
 
 @media only screen and (min-width: 60em){
 	.main {
-		padding-left: 8em;
-		padding-right: 8em;
+		padding: 4em 8em;
 	}
 }
 
